@@ -1,0 +1,9 @@
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\OAuthTwitter\bin\Debug\OAuthTwitter.exe
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\OAuthTwitter\bin\Debug\OAuthTwitter.pdb
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\OAuthTwitter\bin\Debug\Twitterizer2.dll
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\OAuthTwitter\bin\Debug\Newtonsoft.Json.dll
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\OAuthTwitter\bin\Debug\Twitterizer2.pdb
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\OAuthTwitter\bin\Debug\Twitterizer2.xml
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\OAuthTwitter\obj\Debug\ResolveAssemblyReference.cache
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\OAuthTwitter\obj\Debug\OAuthTwitter.exe
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\OAuthTwitter\obj\Debug\OAuthTwitter.pdb

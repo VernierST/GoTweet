@@ -1,0 +1,11 @@
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\GoDeviceConnect\bin\Debug\GoDeviceConnect.exe
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\GoDeviceConnect\bin\Debug\GoDeviceConnect.pdb
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\GoDeviceConnect\bin\Debug\GoIOdotNET.dll
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\GoDeviceConnect\bin\Debug\VSTCoreDefsdotNET.dll
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\GoDeviceConnect\bin\Debug\VSTCoreDefsdotNET.pdb
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\GoDeviceConnect\bin\Debug\VSTCoreDefsdotNET.xml
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\GoDeviceConnect\bin\Debug\GoIOdotNET.pdb
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\GoDeviceConnect\bin\Debug\GoIOdotNET.xml
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\GoDeviceConnect\obj\Debug\ResolveAssemblyReference.cache
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\GoDeviceConnect\obj\Debug\GoDeviceConnect.exe
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\GoDeviceConnect\obj\Debug\GoDeviceConnect.pdb

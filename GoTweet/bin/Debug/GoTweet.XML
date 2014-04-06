@@ -1,0 +1,824 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GoTweet</name>
+    </assembly>
+    <members>
+        <member name="T:GoTweet.NGIOController">
+            <summary>
+            A mediator for Go!Tweet that connects to the NGIO and passes its data
+            </summary>
+        </member>
+        <member name="F:GoTweet.NGIOController.library">
+            <summary>
+            The controller's handle of the NGIO components
+            </summary>
+        </member>
+        <member name="F:GoTweet.NGIOController.device">
+            <summary>
+            The device currently being tracked
+            </summary>
+        </member>
+        <member name="F:GoTweet.NGIOController.sensor">
+            <summary>
+            The sensor currently being tracked
+            </summary>
+        </member>
+        <member name="F:GoTweet.NGIOController.dataCache">
+            <summary>
+            A queue of previous values to spit out in case of emergencies
+            </summary>
+        </member>
+        <member name="F:GoTweet.NGIOController.measuring">
+            <summary>
+            Whether or not <paramref name="device"/> is taking measurments
+            </summary>
+        </member>
+        <member name="M:GoTweet.NGIOController.#ctor">
+            <summary>
+            Initializes the NGIO library and pauses the program to allow for USB drivers to startup
+            </summary>
+        </member>
+        <member name="M:GoTweet.NGIOController.getData">
+            <summary>
+            Gets the last measurment taken from the tracked sensor. In case of errors, 
+             previous, garbage values are returned until the program can recover
+            </summary>
+            <returns>The last measurement or a garbage value</returns>
+        </member>
+        <member name="M:GoTweet.NGIOController.getSensorUnits">
+            <summary>
+            Gets the units of the tracked sensor, sans parantheses
+            </summary>
+            <returns>Prettified Unit string</returns>
+        </member>
+        <member name="M:GoTweet.NGIOController.dispose">
+            <summary>
+            Closes the device and uninitializes the NGIO library. Very important to call this function
+             when you are done!
+            </summary>
+        </member>
+        <member name="M:GoTweet.NGIOController.isDeviceOpen">
+            <summary>
+            Checks the status of the attached device
+            </summary>
+            <returns>If the device is not null and <see cref="P:GoTweet.Device.open"/></returns>
+        </member>
+        <member name="M:GoTweet.NGIOController.closeDevice">
+            <summary>
+            Nullifies the sensor to prevent further measurments, tells the device to stop measuring,
+            and tells it to close itself.
+            </summary>
+        </member>
+        <member name="M:GoTweet.NGIOController.searchAndOpenDevice">
+            <summary>
+            Searches for LabQuests and LabQuest Minis, respectively, and connects to the first one it 
+             finds and it opens it.
+            </summary>
+            <returns>0 if successful, -1 if unable to find any device or errors out</returns>
+        </member>
+        <member name="M:GoTweet.NGIOController.connectToSensor">
+            <summary>
+            Queries the device for connected a <see cref="T:GoTweet.Sensor"/> on an analog channel 
+             on the NGIO <see cref="T:GoTweet.Device"/>, finds the first one, and begins measuring
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GoTweet.NGIOController.getSensorLongName">
+            <summary>
+            Returns the attached sensor's long name
+            </summary>
+            <returns>Sensor's long name</returns>
+        </member>
+        <member name="M:GoTweet.NGIOController.getPrecision">
+            <summary>
+            Returns the number of decimal places
+            </summary>
+            <returns>The lower nibble of the SigFigs</returns>
+        </member>
+        <member name="M:GoTweet.NGIOController.getSignificantDigits">
+            <summary>
+            Returns the number of significant digits
+            </summary>
+            <returns>The upper nibble of SigFigs</returns>
+        </member>
+        <member name="M:GoTweet.NGIOController.trace(System.String)">
+            <summary>
+            Outputs debug information about NGIO connections and measurements
+            </summary>
+            <param name="message">The message to write</param>
+        </member>
+        <member name="T:GoTweet.NGIOException">
+            <summary>
+            Thrown when a command to the NGIO fails
+            </summary>
+        </member>
+        <member name="M:GoTweet.NGIOException.#ctor(System.String)">
+            <summary>
+            Initializes the Exception with a message
+            </summary>
+            <param name="message">The exceptio's message</param>
+        </member>
+        <member name="T:GoTweet.PreferencesPane">
+            <summary>
+            A dialog where preferences can be altered
+            </summary>
+        </member>
+        <member name="F:GoTweet.PreferencesPane.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:GoTweet.PreferencesPane.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:GoTweet.PreferencesPane.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:GoTweet.PreferencesPane.GetPreferencesPane(GoTweet.GoTweet)">
+            <summary>
+            Static method for getting the singleton preferences pane object
+            </summary>
+            <param name="app">The parent GoTweet window</param>
+            <returns>A PreferencesPane singleton object</returns>
+        </member>
+        <member name="M:GoTweet.PreferencesPane.updateInterface">
+            <summary>
+            Updates the dialog according to the user's preferences
+            </summary>
+        </member>
+        <member name="T:GoTweet.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:GoTweet.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:GoTweet.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:GoTweet.Properties.Resources.consumerKey">
+            <summary>
+              Looks up a localized string similar to xS4OhCpfHLfHm03UqFGlQ.
+            </summary>
+        </member>
+        <member name="P:GoTweet.Properties.Resources.consumerSecret">
+            <summary>
+              Looks up a localized string similar to wxOvXmZga3hAqkTvgljsOq5SUdk4e8r7ZdWJFV7m0.
+            </summary>
+        </member>
+        <member name="M:GoTweet.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:GoTweet.PreferencesController">
+            <summary>
+            A singleton that relays user preferences to the application and vice-versa
+            </summary>
+        </member>
+        <member name="M:GoTweet.PreferencesController.#ctor">
+            <summary>
+            Loads the preferences
+            </summary>
+        </member>
+        <member name="M:GoTweet.PreferencesController.GetSharedController">
+            <summary>
+            Singleton instance that encapsulates all the preferences
+            </summary>
+            <returns>A single PreferencesController</returns>
+        </member>
+        <member name="M:GoTweet.PreferencesController.Save">
+            <summary>
+            Saves instance variables into appropriate settings
+            </summary>
+        </member>
+        <member name="M:GoTweet.PreferencesController.Load">
+            <summary>
+            Loads setings into apporpriate instance variables
+            </summary>
+        </member>
+        <member name="M:GoTweet.PreferencesController.updateTokens">
+            <summary>
+            Reloads the tokens after <see cref="T:GoTweet.TwitterController"/> changes them
+            </summary>
+        </member>
+        <member name="P:GoTweet.PreferencesController.tokens">
+            <summary>
+            The OAuth tokens that hold information important for Twitter connection. Note,
+             no passwords in here!
+            </summary>
+        </member>
+        <member name="P:GoTweet.PreferencesController.tweetAtThreshold">
+            <summary>
+            The option to tweet only when the reading is above/below/or equal to <paramref name="threshold"/>
+            </summary>
+        </member>
+        <member name="P:GoTweet.PreferencesController.minutes">
+            <summary>
+            How often the user wants to send out a tweet
+            </summary>
+        </member>
+        <member name="P:GoTweet.PreferencesController.threshold">
+            <summary>
+            If <paramref name="tweetAtThreshold"/> is true, the reading is compared to this value before
+             tweeting
+            </summary>
+        </member>
+        <member name="P:GoTweet.PreferencesController.tweetWhen">
+            <summary>
+            If <paramref name="tweetAtThreshold"/> is true, this value determines if the reading
+             should be:
+            <list type="bullet">
+                <item>1 = above,</item>
+                <item>0 = equal to, or</item>
+                <item>-1 = below</item>
+            </list>
+            to the <paramref name="threshold"/>
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:GoTweet.PreferencesController.message" -->
+        <member name="P:GoTweet.PreferencesController.authorized">
+            <summary>
+            Whether or not the user has authorized Go!Tweet to connect to their account
+            </summary>
+        </member>
+        <member name="P:GoTweet.PreferencesController.lastTweet">
+            <summary>
+            Text of the last tweet sent
+            </summary>
+        </member>
+        <member name="P:GoTweet.PreferencesController.lastTweetTime">
+            <summary>
+            Time the last tweet was sent
+            </summary>
+        </member>
+        <member name="P:GoTweet.PreferencesController.logNGIO">
+            <summary>
+            Whether or not to log NGIO events
+            </summary>
+        </member>
+        <member name="P:GoTweet.PreferencesController.logTwitter">
+            <summary>
+            Whether or not to log Twitter events
+            </summary>
+        </member>
+        <member name="P:GoTweet.PreferencesController.consumerKey">
+            <summary>
+            Top Secret
+            </summary>
+        </member>
+        <member name="P:GoTweet.PreferencesController.consumerSecret">
+            <summary>
+            Top Secret
+            </summary>
+        </member>
+        <member name="F:GoTweet.Sensor.id">
+            <summary>
+            (read-only) The sensor's id
+            </summary>
+        </member>
+        <member name="F:GoTweet.Sensor.longName">
+            <summary>
+            (read-only) The sensor's long name
+            </summary>
+        </member>
+        <member name="F:GoTweet.Sensor.shortName">
+            <summary>
+            (read-only) The sensor's short name
+            </summary>
+        </member>
+        <member name="F:GoTweet.Sensor.units">
+            <summary>
+            (read-only) The sensor's units
+            </summary>
+        </member>
+        <member name="F:GoTweet.Sensor.smart">
+            <summary>
+            (read-only) If the sensor is smart 
+            </summary>
+        </member>
+        <member name="F:GoTweet.Sensor.channel">
+            <summary>
+            (read-only) The channel the sensor is connected to
+            </summary>
+        </member>
+        <member name="F:GoTweet.Sensor.sigFigs">
+            <summary>
+            (read-only) The number of sigfigs and decimal precision
+            </summary>
+        </member>
+        <member name="M:GoTweet.Sensor.#ctor(System.Byte,System.String,System.String,System.String,System.Boolean,System.SByte,System.Byte)">
+            <summary>
+            Sets all the instance variables
+            </summary>
+            <param name="i">id</param>
+            <param name="l">long name</param>
+            <param name="sh">short name</param>
+            <param name="u">units</param>
+            <param name="s">smartness</param>
+            <param name="c">channel</param>
+            <param name="sf">significant figures</param>
+        </member>
+        <member name="M:GoTweet.Sensor.getLongName">
+            <summary>
+            Returns long name
+            </summary>
+            <returns>long name</returns>
+        </member>
+        <member name="M:GoTweet.Sensor.getUnits">
+            <summary>
+            Returns units
+            </summary>
+            <returns>units</returns>
+        </member>
+        <member name="M:GoTweet.Sensor.getChannel">
+            <summary>
+            returns channel
+            </summary>
+            <returns>channel</returns>
+        </member>
+        <member name="M:GoTweet.Sensor.getShortName">
+            <summary>
+            Returns the short name
+            </summary>
+            <returns>short name</returns>
+        </member>
+        <member name="M:GoTweet.Sensor.getSigFigs">
+            <summary>
+            Returns the significant figures
+            </summary>
+            <returns>Significant Figures</returns>
+        </member>
+        <member name="T:GoTweet.Device">
+            <summary>
+            The Device class represents a single LabQuest or LabQuest Device
+            uniquely identified by its name
+            </summary>
+            <remarks>
+            The best way to get an opened device object is through the <see cref="T:GoTweet.NGIOLibrary"/> class.
+            </remarks>
+        </member>
+        <member name="F:GoTweet.Device.device">
+            <summary>
+            Handle to the physical device
+            </summary>
+        </member>
+        <member name="F:GoTweet.Device.type">
+            <summary>
+            Labquest or LabQuest mini
+            </summary>
+        </member>
+        <member name="F:GoTweet.Device.name">
+            <summary>
+            Unique name of the device from <see cref="M:GoTweet.NGIOLibrary.getAllConnectedDeviceNames(System.UInt32)"/>
+            </summary>
+        </member>
+        <member name="M:GoTweet.Device.#ctor(System.IntPtr,System.String,System.UInt32)">
+            <summary>
+            Device constructor. Best not to use it directly but through <see cref="T:GoTweet.NGIOLibrary"/>
+            </summary>
+            <param name="libraryHandle">The library the device belongs to</param>
+            <param name="name">The unique name of the device (get this from <see cref="T:GoTweet.NGIOLibrary"/></param>
+            <param name="type"><see cref="F:NGIOdotNET.NGIO.DEVTYPE_LABQUEST"/>
+            or <see cref="F:NGIOdotNET.NGIO.DEVTYPE_LABQUEST_MINI"/></param>
+        </member>
+        <member name="M:GoTweet.Device.openDevice(System.IntPtr)">
+            <summary>
+            Don't call this fuction directly. Instead, open a device by calling <see cref="M:GoTweet.NGIOLibrary.openDevice(GoTweet.Device)"/>.
+             libraryHandle is a private member in <see cref="T:GoTweet.NGIOLibrary"/>
+            </summary>
+            <param name="libraryHandle">The library you want to open the device in</param>
+        </member>
+        <member name="M:GoTweet.Device.openChannels">
+            <summary>
+            Enable all analog channels on the LabQuest and LabQuest mini
+            </summary>
+        </member>
+        <member name="M:GoTweet.Device.closeDevice">
+            <summary>
+            Closes the device if open
+            </summary>
+        </member>
+        <member name="M:GoTweet.Device.getConnectedSensors">
+            <summary>
+            Queries analog channels on the NGIO device for connected sensors
+            </summary>
+            <returns>An array of preconfigured Sensor objects</returns>
+        </member>
+        <member name="M:GoTweet.Device.getSensor(System.SByte)">
+            <summary>
+            Returns a preconfigured <see cref="T:GoTweet.Sensor"/> in the specified channel. Reads the DDS record if it exists
+            </summary>
+            <param name="channel">The desired channel</param>
+            <returns>The <see cref="T:GoTweet.Sensor"/> in the channel or null if it does not exist</returns>
+        </member>
+        <member name="M:GoTweet.Device.getSensorId(System.SByte)">
+            <summary>
+            Gets the number of the sensor in the specified channel
+            </summary>
+            <param name="channel">The channel to check for a sensor</param>
+            <returns>The ID of the sensor in the channel</returns>
+            <exception cref="T:GoTweet.NGIOException">No sensor was found</exception>
+        </member>
+        <member name="M:GoTweet.Device.getSensorLongName(System.SByte)">
+            <summary>
+            Reads the long name of the sensor from the DDS, assuming it exists, of the specified channel 
+            </summary>
+            <param name="channel">Channel to query</param>
+            <returns>The long name of the sensor in the channel</returns>
+        </member>
+        <member name="M:GoTweet.Device.getSensorShortName(System.SByte)">
+            <summary>
+            Gets the short name of the sensor from the DDS, assuming it exists, of the specified channel
+            </summary>
+            <param name="channel">Channel to query</param>
+            <returns>The short name of the sensor in the channel</returns>
+        </member>
+        <member name="M:GoTweet.Device.getSensorUnits(System.SByte)">
+            <summary>
+            Gets the units of the sensor from the DDS, assuming it exists, of the specified channel
+            </summary>
+            <param name="channel">The channel to query</param>
+            <returns></returns>
+        </member>
+        <member name="M:GoTweet.Device.getSensorSigFigs(VSTCoreDefsdotNET.VSTSensorDDSMemRec)">
+            <summary>
+            Gets the <see cref="F:VSTCoreDefsdotNET.VSTSensorDDSMemRec.SignificantFigures"/> of the sensor
+            from the DDS, assuming it exists, of the specified channel
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoTweet.Device.getDataFromSensor(GoTweet.Sensor,System.Int32)">
+            <summary>
+            Reads a number of measurments from the measurement buffer
+            </summary>
+            <param name="sensor">The sensor from which to get the data</param>
+            <param name="desiredNumberOfMeasurements">Max size of the array of results - may be smaller</param>
+            <returns>An array of converted values</returns>
+        </member>
+        <member name="M:GoTweet.Device.getLastMeasurment(GoTweet.Sensor)">
+            <summary>
+            Convenience method that gets the most recent measurment from the measurement buffer of the specified sensor
+            </summary>
+            <param name="sensor">The desired sensor to get the data from</param>
+            <returns>The most recent value or <see cref="F:System.Single.MaxValue"/> in case of errors</returns>
+        </member>
+        <member name="M:GoTweet.Device.startMeasuring">
+            <summary>
+            Sends the device the command to start aquiring data
+            </summary>
+        </member>
+        <member name="M:GoTweet.Device.stopMeasuring">
+            <summary>
+            Sends the device the command to stop acquiring data
+            </summary>
+        </member>
+        <member name="M:GoTweet.Device.trace(System.String)">
+            <summary>
+            Traces a message to the output window and/or text file
+            </summary>
+            <param name="message">The message to write</param>
+        </member>
+        <member name="P:GoTweet.Device.open">
+            <summary>
+            Whether or not the device is open
+            </summary>
+        </member>
+        <member name="T:GoTweet.NGIOLibrary">
+            <summary>
+            This class represents the many methods that access the NGIOLibrary
+            </summary>
+            <remarks>
+            Remember to call uninit to prevent corruption and memory leaks
+            </remarks>
+        </member>
+        <member name="F:GoTweet.NGIOLibrary.library">
+            <summary>
+            A handle to the NGIO library
+            </summary>
+        </member>
+        <member name="M:GoTweet.NGIOLibrary.#ctor">
+            <summary>
+            Initilizes the library
+            </summary>
+            <exception cref="T:GoTweet.NGIOException">Thrown if the library can't be initialized</exception>
+        </member>
+        <member name="M:GoTweet.NGIOLibrary.getAllConnectedDeviceNames(System.UInt32)">
+            <summary>
+            Opens a Device List snapshot and returns an array of the names of all devices connected
+            A device can be opened by creating a new Device object with the name
+            </summary>
+            <param name="deviceType">
+            The type of device you are looking for. Look in the NGIO class for a list of constants
+            </param>
+            <returns>An array of strings containing the names of all connected devices</returns>
+            <exception cref="T:GoTweet.NGIOException">Check the message of the exception to see error</exception>
+        </member>
+        <member name="M:GoTweet.NGIOLibrary.openDevice(GoTweet.Device)">
+            <summary>Opens the given <see cref="T:GoTweet.Device"/>. Remember to call close on the device when done!</summary>
+            <param name="device">The device desired to be opened</param>
+        </member>
+        <member name="M:GoTweet.NGIOLibrary.openDeviceByName(System.String,System.UInt32)">
+            <summary>Opens a <see cref="T:GoTweet.Device"/> with the given unique name. The type helps determine if exclusive
+            ownership is necessary</summary>
+            <param name="name">A unique name given from a value in the array from  <see cref="M:GoTweet.NGIOLibrary.getAllConnectedDeviceNames(System.UInt32)"/>)</param>
+            <param name="type">The type of device needed to be open</param>
+            <returns>An open <see cref="T:GoTweet.Device"/> ready for taking measurements and retreiving sensor data</returns>
+        </member>
+        <member name="M:GoTweet.NGIOLibrary.uninit">
+            <summary>
+            Unintializes the library. Remember to call this before finishing the application
+            </summary>
+        </member>
+        <member name="T:GoTweet.Authorize">
+            <summary>
+            The OAuth authorization process window
+            </summary>
+        </member>
+        <member name="M:GoTweet.Authorize.GetAuthorizationWindow(GoTweet.PreferencesPane)">
+            <summary>
+            Returns a singleton AuthorizationWindow
+            </summary>
+            <param name="pane">The parent PreferencesPane window</param>
+            <returns>a singleton AuthorizationWindow</returns>
+        </member>
+        <member name="F:GoTweet.Authorize.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:GoTweet.Authorize.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:GoTweet.Authorize.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:GoTweet.GoTweet">
+            <summary>
+            The main window of the GoTweet application where status updates and sensor readings
+            can be viewed
+            </summary>
+        </member>
+        <member name="F:GoTweet.GoTweet.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:GoTweet.GoTweet.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:GoTweet.GoTweet.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:GoTweet.GoTweet.ngio">
+            <summary>
+            The application's handle on the NGIO
+            </summary>
+        </member>
+        <member name="F:GoTweet.GoTweet.twitter">
+            <summary>
+            The application's handle on Twitter
+            </summary>
+        </member>
+        <member name="F:GoTweet.GoTweet.prefs">
+            <summary>
+            The application's handle on the user preferences
+            </summary>
+        </member>
+        <member name="F:GoTweet.GoTweet.measurement">
+            <summary>
+            The current measurment
+            </summary>
+        </member>
+        <member name="F:GoTweet.GoTweet.allGood">
+            <summary>
+            Indicates if the system is ready to collect data
+            </summary>
+        </member>
+        <member name="M:GoTweet.GoTweet.#ctor">
+            <summary>
+            Initializes all components of the GoTweet window according to preferences
+            </summary>
+        </member>
+        <member name="M:GoTweet.GoTweet.openPrefrences(System.Object,System.EventArgs)">
+            <summary>
+            Show the preferences window
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:GoTweet.GoTweet.closeApplication(System.Object,System.EventArgs)">
+            <summary>
+            Closes the application
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:GoTweet.GoTweet.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            A way to intercept Windows messages to the application
+            </summary>
+            <param name="m">The message Windows sent</param>
+        </member>
+        <member name="M:GoTweet.GoTweet.formatMessage(System.String)">
+            <summary>
+            Replaces tokens in a message with their appropriate values 
+            </summary>
+            <param name="message">The message to format</param>
+            <returns>A formatted message</returns>
+        </member>
+        <member name="M:GoTweet.GoTweet.tweet">
+            <summary>
+            Attempts to tweet a message, handling any possible error conditions
+            </summary>
+        </member>
+        <member name="M:GoTweet.GoTweet.startTweeting">
+            <summary>
+            Starts the tweet timer
+            </summary>
+        </member>
+        <member name="M:GoTweet.GoTweet.searchAndConnectToDevice">
+            <summary>
+            Tells the NGIO to find the first device. If it can't,the app indicates so
+            </summary>
+        </member>
+        <member name="M:GoTweet.GoTweet.connectToSensor">
+            <summary>
+            Tells the NGIO to connect to the first sensor on the first device. If it can't, the
+             app indicates so
+            </summary>
+        </member>
+        <member name="M:GoTweet.GoTweet.tweetNowToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Preemptivaley tweets. Doesn't affect the timer at all.
+            </summary>
+            <param name="sender">The tool strip item</param>
+            <param name="e">Event Arguments</param>
+        </member>
+        <member name="M:GoTweet.GoTweet.logMeasurementsToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Begins logging any info the NGIO sends
+            </summary>
+            <param name="sender">The tool srip item</param>
+            <param name="e">Event Arguments</param>
+        </member>
+        <member name="M:GoTweet.GoTweet.logTwitterInteractionsToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Begins logging any info Twitter sends
+            </summary>
+            <param name="sender">The toolstrip item</param>
+            <param name="e">Event Arguments</param>
+        </member>
+        <member name="M:GoTweet.GoTweet.fitTheTweet">
+            <summary>
+            Tries to fit the tweet vertically, but stays constant horizontally
+            </summary>
+        </member>
+        <member name="M:GoTweet.GoTweet.accountStatusLabel_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            When the label is updated, try to fit it in nicely
+            </summary>
+            <param name="sender">The label</param>
+            <param name="e">The Event Arguments</param>
+        </member>
+        <member name="M:GoTweet.GoTweet.accountStatusLabel_Resize(System.Object,System.EventArgs)">
+            <summary>
+            If the label changes size for some reason, be smart about fitting it
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:GoTweet.GoTweet.startDelay_Tick(System.Object,System.EventArgs)">
+            <summary>
+            An initial delay after the app starts to get a little data to tweet
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:GoTweet.GoTweet.statusRotationTimer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Used to rotate between message and time every so often, but now it just updates to 
+             whatever the preferences have in store
+            </summary>
+            <param name="sender">The timer</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:GoTweet.GoTweet.rotateStatusLabel">
+            <summary>
+            Fits the date in the right place, and checks if authorization still exists
+            </summary>
+        </member>
+        <member name="M:GoTweet.GoTweet.tweetTime(System.Object,System.EventArgs)">
+            <summary>
+            Tweet at the user's specified interval if everything's good
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:GoTweet.GoTweet.findSensors_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Check every so often to see if the sensors still exist
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:GoTweet.GoTweet.updateReadings(System.Object,System.EventArgs)">
+            <summary>
+            Get new data from the sensor every half a second
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:GoTweet.TwitterController">
+            <summary>
+            Provides a connection to Twitter
+            </summary>
+        </member>
+        <member name="F:GoTweet.TwitterController.requestAccessTokens">
+            <summary>
+            Normally null, this token holds the permission to ask Twitter to allow for authorization
+             and is necessary to recieve permanent authorization
+            </summary>
+        </member>
+        <member name="F:GoTweet.TwitterController.sharedController">
+            <summary>
+            The singleton Twitter object
+            </summary>
+        </member>
+        <member name="M:GoTweet.TwitterController.#ctor">
+            <summary>
+            Inaccessible constructor
+            </summary>
+        </member>
+        <member name="M:GoTweet.TwitterController.GetSharedController">
+            <summary>
+            Only way to get an instance of this class
+            </summary>
+            <returns>Singleton TwitterController instance</returns>
+        </member>
+        <member name="M:GoTweet.TwitterController.GetAuthorizationURL">
+            <summary>
+            Asks Twitter for permission to athorize and provides a URL to authenticate with
+            </summary>
+            <returns>the URL of the authorization page</returns>
+        </member>
+        <member name="M:GoTweet.TwitterController.ConnectWithPIN(System.String)">
+            <summary>
+            Given a PIN number, attempts to ask for access to Twitter until revoked
+            </summary>
+            <param name="pinNumber"></param>
+            <returns>0 if successful, -1 otherwise</returns>
+        </member>
+        <member name="M:GoTweet.TwitterController.updateStatus(System.String)">
+            <summary>
+            Updates the user's status with the given message
+            </summary>
+            <param name="message"></param>
+            <returns>The response from Twitter</returns>
+        </member>
+        <member name="M:GoTweet.TwitterController.getTokensFromAccess">
+            <summary>
+            Turns the access tokens into OAuth tokens when necessary
+            </summary>
+            <returns>Tokens for authenticated requests</returns>
+        </member>
+        <member name="M:GoTweet.TwitterController.trace(System.String)">
+            <summary>
+            Logs output
+            </summary>
+            <param name="message">The message to log</param>
+        </member>
+        <member name="P:GoTweet.TwitterController.accessTokens">
+            <summary>
+            These tokens, which are loaded from the preferences, contain all the information to make
+             authorized calls to Twiter
+            </summary>
+        </member>
+    </members>
+</doc>

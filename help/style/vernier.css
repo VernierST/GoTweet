@@ -1,0 +1,305 @@
+td {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; text-align: left; }
+
+.ftop {  position: absolute; top: 0px;  }
+.tnav {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; text-align: center}
+.textj {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; text-align: justify}
+.bhead {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold}
+.add {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; font-style: normal}
+.sbar {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; text-align: left}
+.pagehead { font-size: 20px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+.sectionhead { font-weight: bold; font-size: 15px; font-family: Verdana, Arial, Helvetica, sans-serif; }
+
+a { font-weight: bold; color: #006666; }
+a:hover {  text-decoration: underline; color: #006666; }
+
+
+a.info:hover {  font-weight: normal; text-decoration: underline; color: #006666; }
+a.info:link {  font-weight: normal; color: #006666; }
+a.info:visited {  font-weight: normal; color: #006666; }
+a.info:active { font-weight: normal;  color: #CCCCCC}
+
+.hanging { margin-left: 10px; text-indent: -10px }
+dd { text-indent: -10px; }
+
+.sbarj {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; text-align: justify}
+.textn { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px}
+
+body {
+	background-color: white;
+	font: 12px verdana, arial, helvetica, sans-serif;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+
+sub {font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+sup {font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+TT {font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+
+#header {font-size: 18px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+#footer {font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+
+#bigsub {font-size: 16px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+
+#bgy {background-color: yellow;}
+
+#fs10 {font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+#fs11 {font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+#fs12 {font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+#fs13 {font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+#fs14 {font-size: 19px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+#fs15 {font-size: 23px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+#fs20 {font-size: 38px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+
+#h2 {font-size: 21px; font-weight: bold;}
+#sup1 {font-size: 16px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+#sup2 {font-size: 9px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+#sup3 {font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;}
+
+#fs10r {font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; text-align: right;}
+#fs11c {font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif; text-align: center;}
+#fs12c {font-size: 13px; font-family: Verdana, Arial, Helvetica, sans-serif; text-align: center;}
+#fs12b {font-size: 13px; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold;}
+#fs12h {font-size: 13px; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; text-align: center;}
+#fs13rb {font-size: 15px; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; text-align: right;}
+#fs13b {font-size: 15px; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold;}
+#fs13h {font-size: 15px; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold;}
+#fs14b {font-size: 19px; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold;}
+#fs14h {font-size: 19px; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; text-align: center;}
+#fs15h {font-size: 23px; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; text-align: center;}
+
+#tab { margin-left: 10px; padding-left: 10px; }
+
+
+/* New navbar styles */
+div.navheader {
+	text-align: left;
+	background-color: #003322;
+	height: 75px;
+	min-height: 75px;
+	margin-bottom: 10px;
+	background-image: url(/images/bg-all.gif);
+	background-repeat: no-repeat;
+}
+
+div.navheader div.logo {
+	margin: 0;
+	padding: 4px 0 0 5px;
+	float: left;
+	width: 150px;
+}
+
+	div.logo img {
+		border: 0;
+		border-collapse: collapse;
+	}
+
+div.navheader div.navarea {
+	float: left;
+	width: 700px;
+}
+
+div.navheader div.cart {
+	width: 640px;
+	text-align: right;
+	margin: 0;
+	padding: 10px 5px;
+}
+
+	div.cart a {
+		color: white;
+		padding: 5px;
+		font: 12px arial, sans-serif;
+	}
+
+	div.cart img {
+		border: 0;
+	}
+
+div.navheader div.nav {
+	width: 680px;
+	text-align: left;
+	margin: 0;
+	padding: 10px 5px;
+}
+
+div.nav ul {
+	top: 0; left: 0;
+	margin: 0 0 0 5px;
+	padding: 5px 10px 10px 0;
+	list-style: none;
+	display: inline;
+}
+
+div.wrapper {
+	width: 900px;
+}
+
+div.nav ul li { display: inline; padding-right: 10px; margin: 0; }
+div.nav ul li a { padding: 5px 0 2px 0; font: bold 14px arial, sans-serif; color: #ccc; text-decoration: none; }
+div.nav ul li a.highlight { color: #0e9; }
+div.nav ul li a:hover { color: white; text-decoration: none; }
+
+h1 { border-bottom: 1px solid black; margin: 0px 0px 5px 0px; padding: 0px 1px 1px 1px; clear: both; width: 95%; font-size: 15px; font-weight: bold; }
+div.spacer { clear: both; }
+
+div.leftnav {
+	border-right: 1px solid #ddd;
+	color: #aaa;
+	float: left;
+	margin: 10px 5px 0 0;
+	padding: 0;
+	text-align: left;
+	width: 150px;
+}
+
+	div.leftnav ul {
+		color: #aaa;
+		font: bold 12px arial, sans-serif;
+		line-height: 20px;
+		list-style-type: none;
+		margin: 5px 10px 20px 0px;
+		padding: 0;
+		text-align: right;
+		width: 140px;
+	}
+
+	div.leftnav a {
+		color: #888;
+	}
+
+	div.leftnav a:hover {
+		color: #006666;
+	}
+
+	div.leftnav img.catalog { margin: 20px 0 0 20px; }
+
+	div.leftnav form { margin: 10px; padding: 0; color: white; text-align: right; }
+	div.leftnav form p { margin: 0; padding: 0; }
+
+div.leftnavheader {
+	border-bottom: 1px solid #888;
+	font: bold 14px arial, sans-serif;
+	margin: 5px 0 0 10px;
+	text-align: right;
+	width: 130px;
+}
+
+	div.leftnavheader a,
+	div.leftnavheader a:hover {
+		color: #aaa;
+		text-decoration: none;
+	}
+
+div.quote { font-style: italic; line-height: 18px; }
+div.quoter { margin: 10px 0px 0px 10px; }
+div.quoter_home { margin: 0px 0px 30px 20px; }
+span.sub { font-size: 7px; vertical-align: sub; }
+
+div.content { float: left; margin: 10px 0px 0px 10px; padding: 0px; text-align: left; width: 710px; }
+
+div.footer {
+	font-size: 10px;
+	text-align: center;
+	margin: 20px auto 10px auto;
+	clear: both;
+}
+
+div.footer div.textnav {
+	margin: 0 auto;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e7e7e7;
+	clear: both;
+	text-align: center;
+	width: 630px;
+}
+
+div.footer div.contactinfo {
+	padding: 10px 0 20px 0;
+	margin: 0 auto;
+	text-align: center;
+	width: 630px;
+	clear: both;
+}
+
+div.contactinfo div.column {
+	float: left; margin-right: 10px; width: 200px; text-align: left;
+}
+
+div.print {
+	display: none;
+}
+
+div.column {
+	float: left;
+}
+
+table.order {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	margin: 5px 0 10px 0;
+	padding: 0;
+	border-collapse: collapse;
+}
+
+	table.order th, table.order td { border: 0px; }
+	table.order caption { font: bold 12px verdana, sans-serif; text-align: left; }
+	table.order td { padding: 5px; margin: 0; vertical-align: top; }
+	table.order td form { padding: 0; margin: 0; border: 0; }
+	table.order tr { padding: 0; margin: 0; }
+	tr.white { background-color: white; }
+	tr.light_gray { background-color: #efefef; }
+
+ul.relatedlinks { margin: 0; padding: 5px 0; border-width: 1px 0; border-style: solid; border-color: black; width: 550px; }
+	ul.relatedlinks li { margin: 3px 0 3px 5px; padding: 0; list-style-type: none; }
+	ul.relatedlinks li span#fs10 { font: 10px verdana, sans-serif; }
+
+/* Workshop listings */
+
+table.workshop-list {
+	border: 0;
+	border-collapse: collapse;
+}
+
+	table.workshop-list th, table.workshop-list td {
+		font-size: 10px;
+		margin: 0;
+		padding: 4px;
+	}
+
+	table.workshop-list th {
+		border: 0;
+		text-align: left;
+		font-weight: bold;
+	}
+
+		table.workshop-list th.date {
+			width: 50px;
+		}
+
+		table.workshop-list th.location {
+			width: 150px;
+		}
+
+		table.workshop-list th.type {
+			width: 100px;
+		}
+
+	table.workshop-list td {
+		border: 1px solid #ccc;
+	}
+
+
+/* Font styles */
+.fs10 { font-size: 10px; }
+
+
+/* Media types */
+/*
+@media print { 
+	#noprint { display: none; }
+	div.cart { display: none; }
+	div.leftnav { display: none; }
+	#print { display: block; }
+}
+*/

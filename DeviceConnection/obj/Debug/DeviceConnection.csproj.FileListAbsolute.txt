@@ -1,0 +1,12 @@
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\DeviceConnection\bin\Debug\DeviceConnection.exe
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\DeviceConnection\bin\Debug\DeviceConnection.pdb
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\DeviceConnection\bin\Debug\NGIOdotNET.dll
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\DeviceConnection\bin\Debug\NGIOdotNET.pdb
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\DeviceConnection\bin\Debug\NGIOdotNET.xml
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\DeviceConnection\obj\Debug\ResolveAssemblyReference.cache
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\DeviceConnection\obj\Debug\DeviceConnection.exe
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\DeviceConnection\obj\Debug\DeviceConnection.pdb
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\DeviceConnection\bin\Debug\VSTCoreDefsdotNET.dll
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\DeviceConnection\bin\Debug\VSTCoreDefsdotNET.pdb
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\DeviceConnection\bin\Debug\VSTCoreDefsdotNET.xml
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\DeviceConnection\bin\Debug\DeviceConnection.XML

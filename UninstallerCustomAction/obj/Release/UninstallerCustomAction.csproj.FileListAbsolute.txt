@@ -1,0 +1,5 @@
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\UninstallerCustomAction\bin\Release\UninstallerCustomAction.dll
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\UninstallerCustomAction\bin\Release\UninstallerCustomAction.pdb
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\UninstallerCustomAction\obj\Release\ResolveAssemblyReference.cache
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\UninstallerCustomAction\obj\Release\UninstallerCustomAction.dll
+C:\depot\vernier_stuff\Contributors\zparvez\GoTweet\UninstallerCustomAction\obj\Release\UninstallerCustomAction.pdb

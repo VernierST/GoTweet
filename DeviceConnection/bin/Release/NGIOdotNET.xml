@@ -1,0 +1,441 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NGIOdotNET</name>
+    </assembly>
+    <members>
+        <member name="F:NGIOdotNET.NGIO_ParmBlk.CMD_ID_SET_LED_STATE">
+            <summary>
+            The LED commands are supported by the LabQuest Mini, but not the LabQuest.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIO_ParmBlk.CMD_ID_GET_LED_STATE">
+            <summary>
+            The LED commands are supported by the LabQuest Mini, but not the LabQuest.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIO_ParmBlk.CHANNEL_ID_ANALOG_EXT1">
+            <summary>
+            CHANNEL_ID_ANALOG_EXT1 is not currently supported.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIO_ParmBlk.CHANNEL_ID_ANALOG_EXT2">
+            <summary>
+            CHANNEL_ID_ANALOG_EXT2 is not currently supported.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIO_ParmBlk.CHANNEL_MASK_ANALOG_EXT1">
+            <summary>
+            CHANNEL_MASK_ANALOG_EXT1 is not currently supported.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIO_ParmBlk.CHANNEL_MASK_ANALOG_EXT2">
+            <summary>
+            CHANNEL_MASK_ANALOG_EXT2 is not currently supported.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIODefaultCmdResponse.NO_ERROR_SENT_OVER_THE_WIRE">
+            <summary>
+            NGIO.GetErrorSentOverTheWire() returns NGIODefaultCmdResponse.NO_ERROR_SENT_OVER_THE_WIRE if the
+            most recent call to NGIO.SendCmdAndGetResponse() did not result in an error code being sent back from
+            the device.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIODefaultCmdResponse.status">
+            <summary>
+            NGIODefaultCmdResponse.STATUS_...
+            </summary>
+        </member>
+        <member name="T:NGIOdotNET.NGIOSetMeasurementPeriodParams">
+            <summary>
+            Parameter block passed into SendCmdAndGetResponse() with NGIO_CMD_ID_SET_MEASUREMENT_PERIOD.
+            Direct use of the NGIOSetMeasurementPeriodParams struct is not recommended. 
+            Use NGIO.Device_SetMeasurementPeriod() instead.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSetMeasurementPeriodParams.channel">
+            <summary>
+            -1 => all channels.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSetMeasurementPeriodParams.lsbyteLswordDataRunId">
+            <summary>
+            Set this to 0, which indicates RealTime data collection.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSetMeasurementPeriodParams.lsbyteLswordMeasurementPeriod">
+            <summary>
+            Measurement period in device 'ticks', which are microseconds for the LabQuest.
+            </summary>
+        </member>
+        <member name="T:NGIOdotNET.NGIOGetMeasurementPeriodCmdResponsePayload">
+            <summary>
+            This is the response payload returned by SendCmdAndGetResponse() for NGIO_CMD_ID_GET_MEASUREMENT_PERIOD.
+            Direct use of the NGIOGetMeasurementPeriodCmdResponsePayload struct is not recommended. 
+            Use NGIO.Device_GetMeasurementPeriod() instead.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOGetMeasurementPeriodCmdResponsePayload.channel">
+            <summary>
+            -1 => all channels.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOGetMeasurementPeriodCmdResponsePayload.lsbyteLswordDataRunId">
+            <summary>
+            Set this to 0, which indicates RealTime data collection.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOGetMeasurementPeriodCmdResponsePayload.lsbyteLswordMeasurementPeriod">
+            <summary>
+            Measurement period in device 'ticks', which are microseconds for the LabQuest.
+            </summary>
+        </member>
+        <member name="T:NGIOdotNET.NGIOSetLedStateParams">
+            <summary>
+            Parameter block passed into SendCmdAndGetResponse() with NGIO_CMD_ID_SET_LED_STATE.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSetLedStateParams.LEDchannel">
+            <summary>
+            LEDchannel is ignored by the LabQuest Mini.
+            </summary>
+        </member>
+        <member name="T:NGIOdotNET.NGIOGetLedStateParams">
+            <summary>
+            Parameter block passed into SendCmdAndGetResponse() with NGIO_CMD_ID_GET_LED_STATE.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOGetLedStateParams.LEDchannel">
+            <summary>
+            LEDchannel is ignored by the LabQuest Mini.
+            </summary>
+        </member>
+        <member name="T:NGIOdotNET.NGIOGetLedStateCmdResponsePayload">
+            <summary>
+            This is the response payload returned by SendCmdAndGetResponse() for NGIO_CMD_ID_GET_LED_STATE.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOGetLedStateCmdResponsePayload.LEDchannel">
+            <summary>
+            LEDchannel is ignored by the LabQuest Mini.
+            </summary>
+        </member>
+        <member name="T:NGIOdotNET.NGIOGetStatusCmdResponsePayload">
+            <summary>
+            This is the response payload returned by SendCmdAndGetResponse() for NGIO_CMD_ID_GET_STATUS.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOGetStatusCmdResponsePayload.status">
+            <summary>
+            See MASK_STATUS_ .
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOGetStatusCmdResponsePayload.minorVersionMasterCPU">
+            <summary>
+            Binary coded decimal.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOGetStatusCmdResponsePayload.majorVersionMasterCPU">
+            <summary>
+            Binary coded decimal.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOGetStatusCmdResponsePayload.minorVersionSlaveCPU">
+            <summary>
+            Binary coded decimal - updated by LabQuest Mini, but not by the LabQuest.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOGetStatusCmdResponsePayload.majorVersionSlaveCPU">
+            <summary>
+            Binary coded decimal - updated by LabQuest Mini, but not by the LabQuest.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSerialNumber.ww">
+            <summary>
+            week in year(starting at 1) in BCD format
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSerialNumber.yy">
+            <summary>
+            last two digits of year in BCD format
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIO_NVMEM_CHANNEL_ID1_rec.version">
+            <summary>
+            First valid version is 1 .
+            </summary>
+        </member>
+        <member name="T:NGIOdotNET.NGIOReadNVMemParams">
+            <summary>
+            Parameter block passed into SendCmdAndGetResponse() with NGIO_CMD_ID_READ_NV_MEM.
+            In general, response payload returned by SendCmdAndGetResponse() for NGIO_CMD_ID_READ_NV_MEM is just a byte array.
+            However, depending on what parameters are sent, the response can vary, eg NGIO_NVMEM_CHANNEL_ID1_rec .
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOReadNVMemParams.channel">
+            <summary>
+            NGIO_CHANNEL_ID_ANALOGn => access DDS record on sensor. DDS addr range is 0 to 127.
+            NGIO_NVMEM_CHANNEL_IDn => access flash on DAQ. DAQ flash addr range is 0 to (NGIO_NVMEM_CHANNEL_IDn_MEMSIZE - 1).
+            </summary>
+        </member>
+        <member name="T:NGIOdotNET.NGIOWriteNVMemParams">
+            <summary>
+            Parameter block passed into SendCmdAndGetResponse() with NGIO_CMD_ID_WRITE_NV_MEM.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOWriteNVMemParams.channel">
+            <summary>
+            NGIO_CHANNEL_ID_ANALOGn => access DDS record on sensor. DDS addr range is 0 to 127.
+            NGIO_NVMEM_CHANNEL_IDn => access flash on DAQ. DAQ flash addr range is 0 to (NGIO_NVMEM_CHANNEL_IDn_MEMSIZE - 1).
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOWriteNVMemParams.payload">
+            <summary>
+            Useful size of payload field is given by NGIOWriteNVMemParams.count .
+            </summary>
+        </member>
+        <member name="T:NGIOdotNET.NGIOChannelIdParameter">
+            <summary>
+            Parameter block passed into SendCmdAndGetResponse() with 
+            NGIO_CMD_ID_GET_SENSOR_ID,
+            NGIO_CMD_ID_GET_ANALOG_INPUT,
+            NGIO_CMD_ID_GET_SAMPLING_MODE,
+            NGIO_CMD_ID_GET_DIGITAL_COUNTER,
+            NGIO_CMD_ID_READ_IO_CONFIG,
+            NGIO_CMD_ID_READ_IO
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOChannelIdParameter.channel">
+            <summary>
+            NGIO_CHANNEL_ID_ANALOG1 .. NGIO_CHANNEL_ID_DIGITAL2
+            </summary>
+        </member>
+        <member name="T:NGIOdotNET.NGIOGetSensorIdCmdResponsePayload">
+            <summary>
+            This is the response payload returned by SendCmdAndGetResponse() for NGIO_CMD_ID_GET_SENSOR_ID.
+            </summary>
+        </member>
+        <member name="T:NGIOdotNET.NGIOSetAnalogInputParams">
+            <summary>
+            Parameter block passed into SendCmdAndGetResponse() with NGIO_CMD_ID_SET_ANALOG_INPUT.
+            This is also the response returned by SendCmdAndGetResponse() for NGIO_CMD_ID_GET_ANALOG_INPUT.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSetAnalogInputParams.ANALOG_INPUT_5V_BUILTIN_12BIT_ADC">
+            <summary>
+            ANALOG_INPUT_5V_BUILTIN_12BIT_ADC is the default value for all analog channels(set by NGIO_CMD_ID_INIT).
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSetAnalogInputParams.channel">
+            <summary>
+            NGIO_CHANNEL_ID_ANALOG1 ...
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSetAnalogInputParams.analogInput">
+            <summary>
+            ANALOG_INPUT_... 
+            </summary>
+        </member>
+        <member name="T:NGIOdotNET.NGIOSetSamplingModeParams">
+            <summary>
+            Parameter block passed into SendCmdAndGetResponse() with NGIO_CMD_ID_SET_SAMPLING_MODE.
+            This is also the response returned by SendCmdAndGetResponse() for NGIO_CMD_ID_GET_SAMPLING_MODE.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSetSamplingModeParams.SAMPLING_MODE_PERIODIC_LEVEL_SNAPSHOT">
+            <summary>
+            SAMPLING_MODE_PERIODIC_LEVEL_SNAPSHOT is the default value for all analog channels(set by NGIO_CMD_ID_INIT).
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSetSamplingModeParams.SAMPLING_MODE_APERIODIC_EDGE_DETECT">
+            <summary>
+            SAMPLING_MODE_APERIODIC_EDGE_DETECT is the default value for all digital channels(set by NGIO_CMD_ID_INIT).
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSetSamplingModeParams.SAMPLING_MODE_CUSTOM">
+            <summary>
+            Note that for LabQuest family devices NGIO_CMD_ID_WRITE_IO_CONFIG and NGIO_CMD_ID_WRITE_IO are disabled 
+            unless sampling mode is NGIO_SAMPLING_MODE_CUSTOM.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSetSamplingModeParams.channel">
+            <summary>
+            NGIO_CHANNEL_ID_ANALOG1 ...
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSetSamplingModeParams.samplingMode">
+            <summary>
+            SAMPLING_MODE_... 
+            </summary>
+        </member>
+        <member name="T:NGIOdotNET.NGIOSetSensorChannelEnableMaskParams">
+            <summary>
+            Parameter block passed into SendCmdAndGetResponse() with NGIO_CMD_ID_SET_SENSOR_CHANNEL_ENABLE_MASK.
+            This is also the response returned by SendCmdAndGetResponse() for NGIO_CMD_ID_GET_SENSOR_CHANNEL_ENABLE_MASK.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSetSensorChannelEnableMaskParams.lsbyteLsword_EnableSensorChannels">
+            <summary>
+            Enable bits for sensor channels 0 thru 7. Channel 0 is usually reserved for time.
+            See NGIO_ParmBlk.CHANNEL_MASK_... and NGIO_ParmBlk.CHANNEL_ID_MASK_AUDIO_...
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIOSetSensorChannelEnableMaskParams.msbyteLsword_EnableSensorChannels">
+            <summary>
+            Enable bits for sensor channels 8 thru 15 - not supported by LabQuest currently.
+            </summary>
+        </member>
+        <member name="F:NGIOdotNET.NGIO.GRAB_DAQ_TIMEOUT_MS">
+            <summary>
+            GRAB_DAQ_TIMEOUT is so long because the LabQuest needs to save data when it shuts down remote collection.
+            </summary>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.Init">
+            <summary>
+            Call NGIO_Init() once before any other NGIO_ calls are made.
+            </summary>
+            <returns> handle to NGIO library </returns>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.GetNthAvailableCommTransport(System.IntPtr,System.UInt32,System.UInt32@,System.Text.StringBuilder,System.UInt32)">
+            <summary>
+            NGIO_GetNthAvailableCommTransport() is not currently implemented.
+            </summary>
+            <param name="hLib"></param>
+            <param name="N"></param>
+            <param name="commTransportId"></param>
+            <param name="DescBuf"></param>
+            <param name="bufSize"></param>
+            <returns>0 iff successful, else -1.</returns>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.EnableAutoDeviceDiscoveryAcrossCommTransport(System.IntPtr,System.UInt32,System.UInt32)">
+            <summary>
+            NGIO_EnableAutoDeviceDiscoveryAcrossCommTransport() is not currently implemented.
+            </summary>
+            <param name="hLib"></param>
+            <param name="deviceType"></param>
+            <param name="commTransportId"></param>
+            <returns>0 iff successful, else -1.</returns>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.DisableAutoDeviceDiscoveryAcrossCommTransport(System.IntPtr,System.UInt32,System.UInt32)">
+            <summary>
+            NGIO_DisableAutoDeviceDiscoveryAcrossCommTransport() is not currently implemented.
+            </summary>
+            <param name="hLib"></param>
+            <param name="deviceType"></param>
+            <param name="commTransportId"></param>
+            <returns>0 iff successful, else -1.</returns>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.IsAutoDeviceDiscoveryEnabledAcrossCommTransport(System.IntPtr,System.UInt32,System.UInt32)">
+            <summary>
+            NGIO_IsAutoDeviceDiscoveryEnabledAcrossCommTransport() is not currently implemented.
+            </summary>
+            <param name="hLib"></param>
+            <param name="deviceType"></param>
+            <param name="commTransportId"></param>
+            <returns>1 if device discovery is enabled, else 0</returns>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.DeviceListSnapshot_GetNthEntry(System.IntPtr,System.UInt32,System.Text.StringBuilder,System.UInt32,System.UInt32@)">
+            <summary>
+            NGIO_DeviceListSnapshot_GetNthEntry()
+            </summary>
+            <param name="hList"></param>
+            <param name="N"></param>
+            <param name="devnameBuf"></param>
+            <param name="bufSize"></param>
+            <param name="deviceStatusMask"> deviceStatusMask is not implemented yet. </param>
+            <returns></returns>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.Device_Open(System.IntPtr,System.String,System.Byte)">
+            <summary>
+            NGIO_Device_Open()
+            </summary>
+            <param name="hLib"></param>
+            <param name="deviceName"></param>
+            <param name="bDemandExclusiveOwnership"> LabQuest requires that this be set to 0, and call
+            NGIO_Device_AcquireExclusiveOwnership() before doing anything else. </param>
+            <returns></returns>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.Device_AcquireExclusiveOwnership(System.IntPtr,System.UInt32)">
+            <summary>
+            NGIO_Device_AcquireExclusiveOwnership()
+            </summary>
+            <param name="hDevice"></param>
+            <param name="timeoutMs">NGIO_GRAB_DAQ_TIMEOUT is recommended.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.Device_ClearIO(System.IntPtr,System.SByte)">
+            <summary>
+            NGIO_Device_ClearIO()
+            </summary>
+            <param name="hDevice"></param>
+            <param name="channel">-1 implies all channels</param>
+            <returns></returns>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.Device_SendCmdAndGetResponse(System.IntPtr,System.Byte,System.IntPtr,System.UInt32,System.IntPtr,System.UInt32@,System.UInt32)">
+            <summary>
+            NGIO_Device_SendCmdAndGetResponse()
+            </summary>
+            <param name="hDevice"></param>
+            <param name="cmd"></param>
+            <param name="parameters"></param>
+            <param name="nParamBytes"></param>
+            <param name="response"></param>
+            <param name="nRespBytes">size of of response buffer on input, # of bytes copied into response buffer on output</param>
+            <param name="timeoutMs"></param>
+            <returns>0 if successful, else -1.</returns>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.Device_ReadRawMeasurements(System.IntPtr,System.SByte,System.Int32[],System.Int64[],System.UInt32)">
+            <summary>
+            NGIO_Device_ReadRawMeasurements().
+            </summary>
+            <param name="hDevice">[in] handle to open device.</param>
+            <param name="channel">[in]</param>
+            <param name="measurements">[out]loc to store measurements.</param>
+            <param name="timestamps">[out] loc to store 'tick' resolution timestamps. Timestamp is 0 at time of 
+            trigger. For normal real time mode, measurements are triggered when NGIO_CMD_ID_START_MEASUREMENTS is 
+            received.</param>
+            <param name="maxCount">maximum number of measurements to copy to measurements array.</param>
+            <returns>Number of measurements retrieved from the NGIO Measurement Buffer. This routine returns 
+            immediately, so the return value may be less than maxCount. Return value less than 0 implies error.</returns>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.Device_DDSMem_ReadRecord(System.IntPtr,System.SByte,System.Byte,System.UInt32)">
+            <summary>
+            NGIO_Device_DDSMem_ReadRecord().
+            </summary>
+            <param name="hDevice"></param>
+            <param name="channel"></param>
+            <param name="strictDDSValidationFlag">insist on exactly valid checksum if 1, else use a more lax validation test.</param>
+            <param name="timeoutMs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.Device_DDSMem_GetSensorNumber(System.IntPtr,System.SByte,System.Byte@,System.Byte,System.UInt32@,System.UInt32)">
+            <summary>
+            NGIO_Device_DDSMem_GetSensorNumber().
+            </summary>
+            <param name="hDevice"></param>
+            <param name="channel"></param>
+            <param name="SensorNumber"></param>
+            <param name="sendQueryToHardwareflag">If sendQueryToHardwareflag != 0, then send a NGIO_CMD_ID_GET_SENSOR_ID to the sensor hardware.</param>
+            <param name="channelSignature"></param>
+            <param name="timeoutMs"># of milliseconds to wait for a reply before giving up. DEFAULT_CMD_RESPONSE_TIMEOUT_MS is recommended.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.Device_DDSMem_SetOperationType(System.IntPtr,System.SByte,System.Byte)">
+            <summary>
+            NGIO_Device_DDSMem_SetOperationType() can change the probe type. See NGIO_Device_GetProbeType().
+            </summary>
+            <param name="hDevice"></param>
+            <param name="channel"></param>
+            <param name="OperationType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NGIOdotNET.NGIO.Diags_SetDebugTraceThreshold(System.IntPtr,System.Int32)">
+            <summary>
+            NGIO_Diags_SetDebugTraceThreshold().
+            </summary>
+            <param name="hLIb"></param>
+            <param name="threshold">Only trace messages marked with a severity >= threshold(NGIO.TRACE_SEVERITY_) are actually sent to the debug output.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

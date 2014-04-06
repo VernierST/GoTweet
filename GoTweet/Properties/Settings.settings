@@ -1,0 +1,39 @@
+ï»¿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GoTweet.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="accessToken" Type="Twitterizer.OAuthTokenResponse" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="tweetAtThreshold" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="minutes" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">60</Value>
+    </Setting>
+    <Setting Name="threshold" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="tweetWhen" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="message" Type="System.String" Scope="User">
+      <Value Profile="(Default)">&lt;name&gt;: &lt;value&gt; &lt;units&gt;</Value>
+    </Setting>
+    <Setting Name="authorized" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="lastTweet" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Go!Tweet hasn't tweeted yet</Value>
+    </Setting>
+    <Setting Name="lastTweetTime" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="logNGIO" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="logTwitter" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

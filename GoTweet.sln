@@ -1,0 +1,33 @@
+ï»¿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoTweet", "GoTweet\GoTweet.csproj", "{DE127421-17E9-43D3-B74D-4B7766C9952E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "GoTweetInstaller", "GoTweetInstaller\GoTweetInstaller.vdproj", "{26C66A51-A69D-443A-B1B2-C10AA45D143F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+		Description = The main program
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE127421-17E9-43D3-B74D-4B7766C9952E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE127421-17E9-43D3-B74D-4B7766C9952E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE127421-17E9-43D3-B74D-4B7766C9952E}.Debug|x86.ActiveCfg = Debug|x86
+		{DE127421-17E9-43D3-B74D-4B7766C9952E}.Debug|x86.Build.0 = Debug|x86
+		{DE127421-17E9-43D3-B74D-4B7766C9952E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE127421-17E9-43D3-B74D-4B7766C9952E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE127421-17E9-43D3-B74D-4B7766C9952E}.Release|x86.ActiveCfg = Release|x86
+		{DE127421-17E9-43D3-B74D-4B7766C9952E}.Release|x86.Build.0 = Release|x86
+		{26C66A51-A69D-443A-B1B2-C10AA45D143F}.Debug|Any CPU.ActiveCfg = Debug
+		{26C66A51-A69D-443A-B1B2-C10AA45D143F}.Debug|x86.ActiveCfg = Debug
+		{26C66A51-A69D-443A-B1B2-C10AA45D143F}.Release|Any CPU.ActiveCfg = Release
+		{26C66A51-A69D-443A-B1B2-C10AA45D143F}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
